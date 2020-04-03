@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fzy{
+            width: 100%;
+            height:auto;
+            margin: 0px;
+            padding: 0px;
+            background-color: #f1f1f1;
+        }
+        .fzy-tab{
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+        }
+        .fzy-tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline:none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 16px;
+            color: #fff;
+        }
+        .fzy-tab button:hover{
+            background-color: #27ae60;
+        }
+        .fzy-tab button.active {
+            background-color: #ccc;
+        }
+        .fzytabcontent{
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #000;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fzy">
+<div class="fzy-tab">
+<button class="fzytablinks" onclick="openlist(event, 'itemone')">Destination</button>
+<button class="fzytablinks" onclick="openlist(event, 'itemtwo')">Adventure</button>
+<button class="fzytablinks" onclick="openlist(event, 'itemthree')">Activities</button>
+</div>
+<div id="itemone" class="fzytabcontent">
+<h3>Rishikesh</h3>
+</div>
+<div id="itemtwo" class="fzytabcontent">
+    <h3>Dehradun</h3>
+    </div>
+    <div id="itemthree" class="fzytabcontent">
+        <h3>Haridwar</h3>
+        </div>
+    </div>
+    <script>
+function openlist(evnt, itemDetails) {
+    var i, fzytabcontent, fzytablinks;
+    fzytabcontent = document.getElementsByClassName("fzytabcontent");
+    for (i=0; i < fzytabcontent.length; i++) {
+        fzytabcontent[i].style.display ="none";
+    }
+    fzytablinks = document.getElementsByClassName("fzytablinks");
+    for (i = 0; i < fzytablinks.length; i++) {
+        fzytablinks[i].className = fzytablinks[i].className.replace(" active", "");
+    } 
+    document.getElementById(itemDetails).style.display = "block";
+    evnt.currentTarget.className += " active";
+}
+    </script>
+</body>
+</html>
