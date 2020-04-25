@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to create a products list to show all the data of websites.</title>
+  <style>
+    body {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+container {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+       /*Products sections starting*/
+.fzyProductsection {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFFFFF;
+
+}
+.fzyProductsitems {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    border: 1px solid #f0f0f0;
+    margin-top: 10px;
+}
+.fzyProductsitems  .fzyimgPrd {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.fzyProductsitems  .fzyimgPrd img {
+   -webkit-transform: scale(1);
+-moz-transform: scale(1);
+-ms-transform: scale(1);
+-o-transform: scale(1);
+transform: scale(1);
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-webkit-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.fzyProductsitems  .fzyimgPrd:hover img, .fzyProductsitems .img-fzyimgPrd:focus img{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.fzyProductsitems  .fzyimgPrd img {
+    -webkit-transform: scale(1);
+-moz-transform: scale(1);
+-ms-transform: scale(1);
+-o-transform: scale(1);
+transform: scale(1);
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-webkit-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.fzyProductsitems  .fzyimgPrd .fzyOffer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 10px;
+    color: #fff;
+    font-weight: 400;
+    background-color: teal;
+    font-size: 13px;
+}
+.fzyProductsitems .fzyimgPrd .fzyOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0;
+    background-color: #82ae46;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.fzyProductsitems .fzytxt {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+}
+.fzyProductsitems .fzytxt p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: poppins,Arial,sans-serif;
+    margin: 5px auto;
+}
+.fzyProductsitems .fzytxt p a {
+    color: #525252;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+.fzyProductsitems .fzytxt p a:hover {
+    text-decoration: none;
+    display: block;
+}
+.fzyProductsitems .fzytxt .fzyProductprice {
+    width: 100%;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.fzyProductsitems .fzytxt p.fzyProductpricetxt {
+    margin-bottom: 0;
+    color: #82ae46;
+    font-weight: 400;
+}
+.fzyProductsitems .fzytxt p.fzyProductpricetxt  span.price-list {
+    text-decoration: line-through;
+    color: #b3b3b3;
+}
+.fzyProductsitems .fzytxt p.fzyProductpricetxt .price-sale {
+    color: #82ae46;
+}
+.fzyProductsitems:hover  .fzytxt .fzy-btmarea {
+    opacity: 1;
+}
+.fzyProductsitems  .fzytxt .fzy-btmarea { 
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.fzyProductsitems  .fzytxt .fzy-btmarea .m-auto {
+    margin: 0px auto;
+}
+.fzyProductsitems  .fzytxt .fzy-btmarea a {
+    color: #FFFFFF;
+    width: 40px;
+    background-color: #82ae46;
+    height: 40px;
+    margin: 0 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 8px;
+    line-height: 40px;
+}
+.fzyProductsitems:hover .fzyProductprice {
+    opacity: 0;
+}
+  </style>  
+  </head>
+<body>
+    <div class="fzyProductsection">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3">
+        <div class="fzyProductsitems">
+        <a href="" class="fzyimgPrd">
+          <img src="images/pahadimutligrain.png" alt="" class="img-fluid">
+          <span class="fzyOffer">50%</span>
+          <div class="fzyOverlay">
+          </div>
+        </a>
+        <div class="fzytxt py-3 pb-4 text-center"> 
+        <p>
+          <a href="#">Manduwa Atta</a>
+        </p>
+        <div class="d-flex">
+        <div class="fzyProductprice">
+        <p class="fzyProductpricetxt">
+        <span class="mr-2 price-list">$6</span>
+        <span class="mr-2 price-sale">$4.5</span>
+        </p>
+        </div>
+        </div>
+        <div class="fzy-btmarea d-flex px-3">
+        <div class="m-auto d-flex">
+        <a href="#" class="add-to-Cart d-flex justify-content-center aligh-items-center text-center">
+          <span><i class="ion-ios-menu">Cart</i></span>
+        </a>
+        <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+          <span><i class="ion-ios-cart">Buy Now</i></span>
+        </a>
+        <a href="#" class="heart d-flex justify-content-center align-items-center">
+          <span>
+            <i class="ion-ios-heart">Favorite</i>
+          </span>
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3">
+          <div class="fzyProductsitems">
+          <a href="" class="fzyimgPrd">
+            <img src="images/pahadimutligrain.png" alt="" class="img-fluid">
+            <span class="fzyOffer">50%</span>
+            <div class="fzyOverlay">
+            </div>
+          </a>
+          <div class="fzytxt py-3 pb-4 text-center"> 
+          <p>
+            <a href="#">Manduwa Atta</a>
+          </p>
+          <div class="d-flex">
+          <div class="fzyProductprice">
+          <p class="fzyProductpricetxt">
+          <span class="mr-2 price-list">$6</span>
+          <span class="mr-2 price-sale">$4.5</span>
+          </p>
+          </div>
+          </div>
+          <div class="fzy-btmarea d-flex px-3">
+          <div class="m-auto d-flex">
+          <a href="#" class="add-to-Cart d-flex justify-content-center aligh-items-center text-center">
+            <span><i class="ion-ios-menu">Cart</i></span>
+          </a>
+          <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+            <span><i class="ion-ios-cart">Buy Now</i></span>
+          </a>
+          <a href="#" class="heart d-flex justify-content-center align-items-center">
+            <span>
+              <i class="ion-ios-heart">Favorite</i>
+            </span>
+          </a>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3">
+            <div class="fzyProductsitems">
+            <a href="" class="fzyimgPrd">
+              <img src="images/pahadimutligrain.png" alt="" class="img-fluid">
+              <span class="fzyOffer">50%</span>
+              <div class="fzyOverlay">
+              </div>
+            </a>
+            <div class="fzytxt py-3 pb-4 text-center"> 
+            <p>
+              <a href="#">Manduwa Atta</a>
+            </p>
+            <div class="d-flex">
+            <div class="fzyProductprice">
+            <p class="fzyProductpricetxt">
+            <span class="mr-2 price-list">$6</span>
+            <span class="mr-2 price-sale">$4.5</span>
+            </p>
+            </div>
+            </div>
+            <div class="fzy-btmarea d-flex px-3">
+            <div class="m-auto d-flex">
+            <a href="#" class="add-to-Cart d-flex justify-content-center aligh-items-center text-center">
+              <span><i class="ion-ios-menu">Cart</i></span>
+            </a>
+            <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+              <span><i class="ion-ios-cart">Buy Now</i></span>
+            </a>
+            <a href="#" class="heart d-flex justify-content-center align-items-center">
+              <span>
+                <i class="ion-ios-heart">Favorite</i>
+              </span>
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3">
+              <div class="fzyProductsitems">
+              <a href="" class="fzyimgPrd">
+                <img src="images/pahadimutligrain.png" alt="" class="img-fluid">
+                <span class="fzyOffer">50%</span>
+                <div class="fzyOverlay">
+                </div>
+              </a>
+              <div class="fzytxt py-3 pb-4 text-center"> 
+              <p>
+                <a href="#">Manduwa Atta</a>
+              </p>
+              <div class="d-flex">
+              <div class="fzyProductprice">
+              <p class="fzyProductpricetxt">
+              <span class="mr-2 price-list">$6</span>
+              <span class="mr-2 price-sale">$4.5</span>
+              </p>
+              </div>
+              </div>
+              <div class="fzy-btmarea d-flex px-3">
+              <div class="m-auto d-flex">
+              <a href="#" class="add-to-Cart d-flex justify-content-center aligh-items-center text-center">
+                <span><i class="ion-ios-menu">Cart</i></span>
+              </a>
+              <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                <span><i class="ion-ios-cart">Buy Now</i></span>
+              </a>
+              <a href="#" class="heart d-flex justify-content-center align-items-center">
+                <span>
+                  <i class="ion-ios-heart">Favorite</i>
+                </span>
+              </a>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+        </div>
+        </div>
+        </div>
+</body>
+</html>
